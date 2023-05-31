@@ -16,13 +16,13 @@ app.use(require("./routes/auth"))
 app.use(require("./routes/post"))
 app.use(require("./routes/user"))
 
-if(process.env.NODE_ENV==="prod"){
+
     app.use(express.static("client/build"))
     const path=require("path")
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,"client","build","index.html"))
     })
-}
+
 
 mongoose.connect(MONGOURL)
 mongoose.connection.on("connected",()=>{
