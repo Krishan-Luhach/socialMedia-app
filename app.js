@@ -8,13 +8,7 @@ const {MONGOURL}=require("./config/keys")
 
 
 
-mongoose.connect(MONGOURL)
-mongoose.connection.on("connected",()=>{
-    console.log("Connected to mongo")
-})
-mongoose.connection.on("error",(err)=>{
-    console.log(err)
-})
+
 
 require("./models/post")
 require("./models/user")
@@ -30,6 +24,13 @@ if(process.env.NODE_ENV==="production"){
     })
 }
 
-app.listen(PORT,()=>{
-    console.log('server is running on port '+PORT)
+mongoose.connect(MONGOURL)
+mongoose.connection.on("connected",()=>{
+    app.listen(PORT,()=>{
+        console.log('server is running on port '+PORT)
+    })
+    console.log("Connected to mongo")
+})
+mongoose.connection.on("error",(err)=>{
+    console.log(err)
 })
