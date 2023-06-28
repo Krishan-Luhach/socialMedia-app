@@ -39,8 +39,8 @@ function Profile() {
 
           <div>
             <h6>{photos.length} posts</h6>
-            <h6>{state?.followers?state.followers.length:"0"} <Link to={"/followerlist/"+state._id}>followers</Link></h6>
-            <h6>{state?.followings?state.followings.length:"0"} <Link to={"/followinglist/"+state._id}>followings</Link></h6>
+            <h6>{state?.followers?state?.followers.length:"0"} <Link to={"/followerlist/"+state?._id}>followers</Link></h6>
+            <h6>{state?.followings?state?.followings.length:"0"} <Link to={"/followinglist/"+state?._id}>followings</Link></h6>
           </div>
           <Link className='editprofile_link' to="/editprofile">Edit Profile</Link> 
         </div>
@@ -49,7 +49,7 @@ function Profile() {
       <div className='gallery'>
         {photos.map(photo=>{
           return(
-            <img key={photo._id} src={photo.photo} alt="Post Photo"/>
+            <img key={photo?._id} src={photo.photo} alt="Post Photo"/>
           )
         })}
       </div>
