@@ -38,6 +38,7 @@ function Profile() {
           <h5>{state?state.email:"Loading"}</h5>
 
           <div>
+  
             <h6>{photos.length} posts</h6>
             <h6>{state?.followers?state?.followers.length:"0"} <Link to={"/followerlist/"+state?._id}>followers</Link></h6>
             <h6>{state?.followings?state?.followings.length:"0"} <Link to={"/followinglist/"+state?._id}>followings</Link></h6>
