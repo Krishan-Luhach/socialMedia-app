@@ -1,2 +1,2 @@
 # social-media-app
-URL - https://aware-yak-overshirt.cyclic.app/
+URL -https://angry-gold-kimono.cyclic.app/
