@@ -1,2 +1,2 @@
 # social-media-app
-URL -https://smoggy-crow-jumpsuit.cyclic.app/
+URL - https://nice-red-crayfish-hose.cyclic.app/
