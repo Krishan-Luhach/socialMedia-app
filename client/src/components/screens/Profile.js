@@ -29,13 +29,13 @@ function Profile() {
     
     <div className='profile_header'>
         <div className='profile_image'>
-          <img src={state?state.pic:"Loading...."} alt='Profile' />
+          <img src={state?state?.pic:"Loading...."} alt='Profile' />
       
            
         </div>
         <div className='user_info'>
-          <h4>{state?state.name:"Loading"}</h4>
-          <h5>{state?state.email:"Loading"}</h5>
+          <h4>{state?state?.name:"Loading"}</h4>
+          <h5>{state?state?.email:"Loading"}</h5>
 
           <div>
   
@@ -50,7 +50,7 @@ function Profile() {
       <div className='gallery'>
         {photos.map(photo=>{
           return(
-            <img key={photo?._id} src={photo.photo} alt="Post Photo"/>
+            <img key={photo?._id} src={photo?.photo} alt="Post Photo"/>
           )
         })}
       </div>
