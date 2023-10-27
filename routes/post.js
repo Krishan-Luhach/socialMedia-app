@@ -84,7 +84,7 @@ router.put("/comment",requireLogin,(req,res)=>{
         $push:{comments:comment}
     },{new:true})
     .populate("comments.postedBy","_id name pic")
-    .populate("postedBy","_id name")
+    .populate("postedBy","_id name pic")
     .exec((err,result)=>{
         if(err)
         res.send({error:err})
