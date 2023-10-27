@@ -53,7 +53,7 @@ router.put("/like",requireLogin,(req,res)=>{
     Post.findByIdAndUpdate(req.body.postId,{
         $push:{likes:req.user._id}
     },{new:true})
-    .populate("postedBy","_id name")
+    .populate("postedBy","_id name pic")
     .exec((err,result)=>{
         if(err)
         res.send({error:err})
@@ -66,7 +66,7 @@ router.put("/unlike",requireLogin,(req,res)=>{
     Post.findByIdAndUpdate(req.body.postId,{
         $pull:{likes:req.user._id}
     },{new:true})
-    .populate("postedBy","_id name")
+    .populate("postedBy","_id name pic")
     .exec((err,result)=>{
         if(err)
         res.send({error:err})
@@ -83,7 +83,7 @@ router.put("/comment",requireLogin,(req,res)=>{
     Post.findByIdAndUpdate(req.body.postId,{
         $push:{comments:comment}
     },{new:true})
-    .populate("comments.postedBy","_id name")
+    .populate("comments.postedBy","_id name pic")
     .populate("postedBy","_id name")
     .exec((err,result)=>{
         if(err)
