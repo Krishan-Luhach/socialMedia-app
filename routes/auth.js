@@ -33,7 +33,7 @@ router.post("/signup",(req,res)=>{
     User.findOne({email:email})
     .then(savedUser=>{
         if(savedUser){
-            return res.send("User already exists with that email")
+            return res.send({error:"User already exists with that email"})
         }
         else{
             bcrypt.hash(password,7)
